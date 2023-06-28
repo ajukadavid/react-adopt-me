@@ -23,7 +23,10 @@ const SearchParams = () => {
     return (
         <div className="search-params">
             {location}
-            <form>
+            <form onSubmit={e => {
+                e.preventDefault()
+                requestPets()
+            }}>
                 <label htmlFor="location">
                    Location
                    <input onChange={e => setLocation(e.target.value)} id="location" value={location} placeholder="Location" /> 
