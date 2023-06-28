@@ -29,7 +29,7 @@ const SearchParams = () => {
                 </label>
                 <label htmlFor="breed">
                     Breed
-                    <select id="breed" value={breed} onChange={e => {
+                    <select disabled={breeds.length === 0} id="breed" value={breed} onChange={e => {
                         setBreed(e.target.value)
                     }}>
                         <option />
