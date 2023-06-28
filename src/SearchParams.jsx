@@ -3,9 +3,10 @@ import { useState } from "react";
 
 
 const SearchParams = () => {
-    const [location, setLocation] = useState('Epe, lagos')
+    const [location, setLocation] = useState('')
     return (
         <div className="search-params">
+            {location}
             <form>
                 <label htmlFor="location">
                    Location
