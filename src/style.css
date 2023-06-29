@@ -364,3 +364,8 @@
   .mini .loader {
     font-size: 34px;
   }
+
+  .lemmeSee {
+    display: flex;
+    flex-direction: column;
+  }

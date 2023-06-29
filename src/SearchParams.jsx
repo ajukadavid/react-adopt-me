@@ -8,7 +8,7 @@ const SearchParams = () => {
     const [location, setLocation] = useState('')
     const [animal, setAnimal] = useState('')
     const [breed, setBreed] = useState('')
-    const breeds = useBreedList(animal)
+const [breeds] = useBreedList(animal)
     const [pets, setPets] = useState([])
 
     useEffect(() => {
@@ -45,22 +45,23 @@ const SearchParams = () => {
                 </label>
                 <label htmlFor="breed">
                     Breed
-               
+                    
                     <select disabled={breeds.length === 0} id="breed" value={breed} onChange={e => {
                         setBreed(e.target.value)
                     }}>
                         <option />
-                        {breeds.map((b) => {
-                        <option key={b}>{b}</option>
-                    })}
-{/*                         
-                        {breeds.map((b) => (
-                            
-                        ))} */}
+                        
+                    {
+                        breeds.map((b) => (
+                            <option key={b}>{b}</option>
+                        ))
+                    }
                     </select>
                 </label>
+              
                 <button>Submit</button>
             </form>
+            
                         {
                             pets.map(pet => (
                                 <Pet name={pet.name} animal={pet.animal} breed={pet.breed} id={pet.id}/>
