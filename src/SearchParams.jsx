@@ -23,7 +23,6 @@ const [breeds] = useBreedList(animal)
     }
     return (
         <div className="search-params">
-            {location}
             <form onSubmit={e => {
                 e.preventDefault()
                 requestPets()
