@@ -8,7 +8,7 @@ const SearchParams = () => {
     const [location, setLocation] = useState('')
     const [animal, setAnimal] = useState('')
     const [breed, setBreed] = useState('')
-const [breeds] = useBreedList(animal)
+    const [breeds] = useBreedList(animal)
     const [pets, setPets] = useState([])
 
     useEffect(() => {
@@ -61,7 +61,7 @@ const [breeds] = useBreedList(animal)
                 <button>Submit</button>
             </form>
             
-                      <Results pets={pets}/>
+            <Results pets={pets}/>
         </div>
     )
 }
