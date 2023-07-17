@@ -7,7 +7,7 @@ import { useState } from "react"
 import Modal from "./Modal"
 
 const Details = () => {
-    const [ showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false);
     const {id} = useParams()
     const results = useQuery(["details", id], fetchPet)
 
@@ -26,22 +26,21 @@ const Details = () => {
             <div>
                 <h1>{pet.name}</h1>
                 <h2>{pet.animal} - {pet.breed} - {pet.city}, ${pet.state}</h2>
-                <button onClick={()=> setShowModal(true)}>Adopt {pet.name}</button>
+                <button onClick={() => setShowModal(true)}>Adopt {pet.name}</button>;
                 <p>{pet.description}</p>
                 {
-                    showModal ? 
-                    (
-                        <Modal>
-                            <div>
-                                <h1>Would you like to adopt {pet.name}?</h1>
-                                <div className="buttons">
-                                    <button>Yes</button>
-                                    <button onClick={()=> setShowModal(false)}>No</button>
-                                </div>
-                            </div>
-                        </Modal>
-                    ) : null
-                }
+  showModal ? (
+    <Modal>
+      <div>
+        <h1>Would you like to adopt {pet.name}?</h1>
+        <div className="buttons">
+          <button>Yes</button>
+          <button onClick={() => setShowModal(false)}>No</button>
+        </div>
+      </div>
+    </Modal>
+  ) : null // you have to remove this semi-colon, my auto-formatter adds it back if I delete it
+}
             </div>
         </div>
     )
